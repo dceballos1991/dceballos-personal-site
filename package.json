@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@visx/network": "^3.3.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18",
-    "reactflow": "^11.10.2"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
