@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@visx/network": "^3.3.0",
+    "@visx/responsive": "^3.3.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
