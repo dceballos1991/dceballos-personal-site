@@ -1,30 +1,13 @@
 'use client'
+import { GraphBackground } from '@/components/graph-background'
+import { ModeToggle } from '@/components/mode-toggle'
 import { Graph } from '@visx/network'
 import { ParentSize } from '@visx/responsive'
 
 const Example = ({ width, height }: { width: number; height: number }) => {
   return (
     <svg className='relative' width={width} height={height}>
-      <svg className='absolute' width={width} height={height}>
-        <pattern
-          id='pattern-1undefined'
-          x='1.5'
-          y='5'
-          width='24'
-          height='24'
-          patternUnits='userSpaceOnUse'
-          patternTransform='translate(-1,-1)'
-        >
-          <circle cx='1' cy='1' r='1' fill='#91919a'></circle>
-        </pattern>
-        <rect
-          x='0'
-          y='0'
-          width='100%'
-          height='100%'
-          fill='url(#pattern-1undefined)'
-        ></rect>
-      </svg>
+      <GraphBackground width={width} height={height} />
     </svg>
   )
 }
@@ -36,6 +19,7 @@ export default function Home() {
       <ParentSize>
         {({ width, height }) => <Example width={width} height={height} />}
       </ParentSize>
+      <ModeToggle />
     </main>
   )
 }
