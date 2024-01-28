@@ -18,7 +18,7 @@ export const GraphBackground = ({
         patternUnits='userSpaceOnUse'
         patternTransform='translate(-1,-1)'
       >
-        <circle cx='1' cy='1' r='1' fill='#a1a1aa'></circle>
+        <circle cx='1' cy='1' r='1' className='fill-graph-dots'></circle>
       </pattern>
       <rect
         x='0'
