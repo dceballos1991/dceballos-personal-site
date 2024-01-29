@@ -2,26 +2,18 @@
 import React from 'react'
 import {
   Card,
-  CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
 
 export const Node = () => {
   return (
-    <Card>
+    <Card className='absolute left-[50px] top-[20px]'>
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>David Ceballos</CardTitle>
+        <CardDescription>Knowledge Graph</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p>Card Content</p>
-      </CardContent>
-      <CardFooter>
-        <p>Card Footer</p>
-      </CardFooter>
     </Card>
   )
 }
