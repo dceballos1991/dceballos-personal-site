@@ -1,5 +1,10 @@
 import React from 'react'
 import { DefaultNode, Graph } from '@visx/network'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@radix-ui/react-tooltip'
 
 export type NetworkProps = {
   width: number
