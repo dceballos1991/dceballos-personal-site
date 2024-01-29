@@ -1,6 +1,7 @@
-/* eslint-disable react/no-unstable-nested-components */
+'use client'
 import React from 'react'
 import { DefaultNode, Graph } from '@visx/network'
+import { Node } from './node'
 
 export type NetworkProps = {
   width: number
@@ -44,25 +45,28 @@ export const background = '#272b4d'
 
 export default function Example({ width, height }: NetworkProps) {
   return (
-    <Graph<CustomLink, CustomNode>
-      graph={graph}
-      top={20}
-      left={100}
-      nodeComponent={({ node: { color } }) =>
-        color ? <DefaultNode fill={color} /> : <DefaultNode />
-      }
-      linkComponent={({ link: { source, target, dashed } }) => (
-        <line
-          x1={source.x}
-          y1={source.y}
-          x2={target.x}
-          y2={target.y}
-          strokeWidth={2}
-          stroke='#999'
-          strokeOpacity={0.6}
-          strokeDasharray={dashed ? '8,4' : undefined}
-        />
-      )}
-    />
+    <>
+      <Graph<CustomLink, CustomNode>
+        graph={graph}
+        top={20}
+        left={100}
+        nodeComponent={({ node: { color } }) =>
+          color ? <DefaultNode fill={color} /> : <Node />
+        }
+        linkComponent={({ link: { source, target, dashed } }) => (
+          <line
+            x1={source.x}
+            y1={source.y}
+            x2={target.x}
+            y2={target.y}
+            strokeWidth={2}
+            stroke='#999'
+            strokeOpacity={0.6}
+            strokeDasharray={dashed ? '8,4' : undefined}
+          />
+        )}
+      />
+      <Node />
+    </>
   )
 }
