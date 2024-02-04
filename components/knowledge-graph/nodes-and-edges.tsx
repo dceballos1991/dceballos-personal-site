@@ -1,10 +1,7 @@
 import React from 'react'
 import { DefaultNode, Graph } from '@visx/network'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '@radix-ui/react-tooltip'
+import * as d3 from 'd3'
+import { LINKS, NODES } from '@/lib/constants'
 
 export type NetworkProps = {
   width: number
@@ -45,6 +42,13 @@ const graph = {
 }
 
 export default function Example({ width, height }: NetworkProps) {
+  // const simulation = d3
+  //   .forceSimulation(NODES)
+  //   .force('link', d3.forceLink(LINKS))
+  //   .force('charge', d3.forceManyBody())
+  //   .force('center', d3.forceCenter(width / 2, height / 2))
+
+  console.log({ NODES: NODES, LINKS: LINKS })
   return (
     <Graph<CustomLink, CustomNode>
       graph={graph}
