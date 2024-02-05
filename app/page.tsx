@@ -4,7 +4,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 export default function Home() {
   return (
     <main className='flex h-screen flex-col items-center justify-between p-24'>
-      hello world
+      hello world, this is my knowledge graph
       <KnowledgeGraph />
       <ModeToggle />
     </main>

@@ -11,7 +11,7 @@ export const KnowledgeGraph = () => {
     <ParentSize className='relative'>
       {({ width, height }) => (
         <>
-          <Node />
+          {/* <Node /> */}
           <svg className='relative' width={width} height={height}>
             <GraphBackground width={width} height={height} />
             <Example width={width} height={height} />
