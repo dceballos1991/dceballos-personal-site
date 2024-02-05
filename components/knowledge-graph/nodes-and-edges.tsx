@@ -9,7 +9,8 @@ export type NetworkProps = {
   height: number
 }
 
-export default function Example({ width, height }: NetworkProps) {
+export default function NodesAndEdges({ width, height }: NetworkProps) {
+  console.log({ width, height })
   const [nodes, setNodes] = useState<CustomNode[]>(NODES as CustomNode[])
   const [links, setLinks] = useState<CustomLink[]>(LINKS as CustomLink[])
   const svgRef = useRef(null)
@@ -30,8 +31,8 @@ export default function Example({ width, height }: NetworkProps) {
 
     // Initially place all nodes at the center
     simulation.nodes().forEach((node) => {
-      node.fx = width / 2
-      node.fy = height / 2
+      node.x = width / 2
+      node.y = height / 2
     })
 
     for (let i = 0; i < 300; ++i) {
