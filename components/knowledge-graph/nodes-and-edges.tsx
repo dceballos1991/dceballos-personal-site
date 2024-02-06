@@ -14,6 +14,7 @@ export default function NodesAndEdges({ width, height }: NetworkProps) {
   const [nodes, setNodes] = useState<CustomNode[]>(NODES as CustomNode[])
   const [links, setLinks] = useState<CustomLink[]>(LINKS as CustomLink[])
   const svgRef = useRef(null)
+  console.log({ nodes })
 
   useEffect(() => {
     const simulation = d3
@@ -29,20 +30,14 @@ export default function NodesAndEdges({ width, height }: NetworkProps) {
       )
       .force('center', d3.forceCenter(width / 2, height / 2))
 
-    // Initially place all nodes at the center
-    simulation.nodes().forEach((node) => {
-      node.x = width / 2
-      node.y = height / 2
-    })
-
-    for (let i = 0; i < 300; ++i) {
-      // Run for a sufficient number of ticks to stabilize
-      simulation.tick()
-    }
+    // for (let i = 0; i < 300; ++i) {
+    //   // Run for a sufficient number of ticks to stabilize
+    //   simulation.tick()
+    // }
 
     setNodes(simulation.nodes() as CustomNode[])
 
-    simulation.stop()
+    // simulation.stop()
     return () => {
       simulation.stop()
     }

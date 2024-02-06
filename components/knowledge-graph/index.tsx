@@ -8,11 +8,16 @@ import { Node } from './node'
 
 export const KnowledgeGraph = () => {
   return (
-    <ParentSize className='relative'>
+    <ParentSize className='relative overflow-hidden'>
       {({ width, height }) => (
         <>
           {/* <Node /> */}
-          <svg className='relative' width={width} height={height}>
+          <svg
+            className='relative'
+            width={width}
+            height={height}
+            viewBox={`0 0 ${width} ${height}`}
+          >
             <GraphBackground width={width} height={height} />
             {width && height && <NodesAndEdges width={width} height={height} />}
           </svg>
