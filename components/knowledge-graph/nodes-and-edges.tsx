@@ -13,12 +13,18 @@ export default function NodesAndEdges({ width, height }: NetworkProps) {
   console.log({ width, height })
   const [nodes, setNodes] = useState<CustomNode[]>(NODES as CustomNode[])
   const [links, setLinks] = useState<CustomLink[]>(LINKS as CustomLink[])
-  const svgRef = useRef(null)
   console.log({ nodes })
 
   useEffect(() => {
+    const initializedNodes = nodes.map((node) => ({
+      ...node,
+      x: width / 2,
+      y: height / 2,
+    }))
+    setNodes(initializedNodes)
+
     const simulation = d3
-      .forceSimulation(nodes as d3.SimulationNodeDatum[])
+      .forceSimulation(initializedNodes as d3.SimulationNodeDatum[])
       .force(
         'link',
         d3.forceLink(links as d3.SimulationLinkDatum<CustomNode>[]),
@@ -29,15 +35,8 @@ export default function NodesAndEdges({ width, height }: NetworkProps) {
         // .strength(-500)
       )
       .force('center', d3.forceCenter(width / 2, height / 2))
+      .stop()
 
-    // for (let i = 0; i < 300; ++i) {
-    //   // Run for a sufficient number of ticks to stabilize
-    //   simulation.tick()
-    // }
-
-    setNodes(simulation.nodes() as CustomNode[])
-
-    // simulation.stop()
     return () => {
       simulation.stop()
     }

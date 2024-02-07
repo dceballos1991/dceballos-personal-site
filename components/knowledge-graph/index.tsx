@@ -8,7 +8,7 @@ import { Node } from './node'
 
 export const KnowledgeGraph = () => {
   return (
-    <ParentSize className='relative overflow-hidden'>
+    <ParentSize className='relative overflow-hidden [&_*]:transition-all'>
       {({ width, height }) => (
         <>
           {/* <Node /> */}
