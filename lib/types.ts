@@ -6,6 +6,8 @@ export type CustomNode = {
   details?: string
   x?: number
   y?: number
+  vx?: number
+  vy?: number
 }
 
 export type CustomLink = {
